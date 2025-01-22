@@ -1,0 +1,14 @@
+{
+  "node": {
+    "4bab826aad917d45c63da20113ea1ccb131fe50f": {
+      "workers": {
+        "app/(auth)/sign-in/[[...sigin-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fmahidharreddyg%2FMahi%2FMy%20Projects%2FWeb%20Dev%2FNexDuo-App%2Fnode_modules%2F%40clerk%2Fnextjs%2Fdist%2Fesm%2Fapp-router%2Fserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
+      },
+      "layer": {
+        "app/(auth)/sign-in/[[...sigin-in]]/page": "action-browser"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "VzNhSaIs3AWFMrN0eaT9nIn/tyTH1AmK5Y7c/snoybQ="
+}
