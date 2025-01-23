@@ -31,14 +31,20 @@ export default function RootLayout({
           },
           variables: {
             colorText: "#fff",
-            colorPrimary: "#00FF1A",
-            colorBackground: "white",
-            colorInputBackground: "#252A41",
+            colorPrimary: "#41126A",
+            colorBackground: "#0A0A0A",
+            colorInputBackground: "#161616",
             colorInputText: "#fff",
           },
         }}
       >
-        <body className={inter.className} style={{ backgroundColor: "#0A0A0A" }}>
+        <body
+  className={inter.className}
+  style={{
+    background: "linear-gradient(to bottom, #101012, #130122)",
+  }}
+>
+
           <Toaster />
           {children}
         </body>

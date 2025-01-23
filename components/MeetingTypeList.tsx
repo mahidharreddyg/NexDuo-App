@@ -75,30 +75,31 @@ const MeetingTypeList = () => {
         img="/icons/add-meeting.svg"
         title="New Meeting"
         description="Start an instant meeting"
+        className="bg-[linear-gradient(135deg,#FF3C00,#FF742E)] card-hover-effect new-meeting"
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
       <HomeCard
         img="/icons/join-meeting.svg"
         title="Join Meeting"
         description="via invitation link"
-        className="bg-blue-1"
+        className="bg-[linear-gradient(135deg,#41126A,#830EF9)] card-hover-effect join-meeting"
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
       <HomeCard
         img="/icons/schedule.svg"
         title="Schedule Meeting"
         description="Plan your meeting"
-        className="bg-purple-1"
+        className="bg-[linear-gradient(135deg,#1473E6,#64ECFF)] card-hover-effect schedule-meeting"
         handleClick={() => setMeetingState('isScheduleMeeting')}
       />
       <HomeCard
         img="/icons/recordings.svg"
         title="View Recordings"
         description="Meeting Recordings"
-        className="bg-yellow-1"
+        className="bg-[linear-gradient(135deg,#F9A90E,#FF7A00)] card-hover-effect view-recordings"
         handleClick={() => router.push('/recordings')}
       />
-
+  
       {!callDetail ? (
         <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}

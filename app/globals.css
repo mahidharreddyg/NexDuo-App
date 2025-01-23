@@ -52,6 +52,28 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
+.card-hover-effect {
+  transition: box-shadow 0.3s ease;
+  position: relative;
+}
+
+.card-hover-effect.new-meeting:hover {
+  box-shadow: 0 0 15px 4px rgba(255, 116, 46, 0.3); /* Subtle orange */
+}
+
+.card-hover-effect.join-meeting:hover {
+  box-shadow: 0 0 15px 4px rgba(131, 14, 249, 0.3); /* Subtle purple */
+}
+
+.card-hover-effect.schedule-meeting:hover {
+  box-shadow: 0 0 15px 4px rgba(100, 236, 255, 0.3); /* Subtle blue */
+}
+
+.card-hover-effect.view-recordings:hover {
+  box-shadow: 0 0 15px 4px rgba(249, 169, 14, 0.3); /* Subtle golden */
+}
+
+
 /* ==== clerk class override ===== */
 
 .cl-userButtonPopoverActionButtonIcon {
@@ -62,13 +84,32 @@
   height: 40px;
 }
 .cl-dividerLine {
-  background: #252a41;
+  background: #41126A;
   height: 2px;
 }
 
 .cl-socialButtonsIconButton {
-  border: 3px solid #565761;
+  border: 20px solid linear-gradient(135deg, #6A1B9A, #4A148C); 
+  background-color: white;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  color: #565761;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  padding: 14px 30px;
+  font-size: 18px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
+.cl-socialButtonsIconButton:hover {
+  background-color: #C1C1C1;
+  color: #333;
+  border-color: linear-gradient(135deg, #6A1B9A, #4A148C);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
 
 .cl-internal-wkkub3 {
   color: white;
@@ -76,6 +117,8 @@
 .cl-userButtonPopoverActionButton {
   color: white;
 }
+
+
 
 /* =============================== */
 
