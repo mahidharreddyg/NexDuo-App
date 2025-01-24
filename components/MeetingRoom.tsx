@@ -33,7 +33,6 @@ const MeetingRoom = () => {
   const [showParticipants, setShowParticipants] = useState(false);
   const { useCallCallingState } = useCallStateHooks();
 
-  // for more detail about types of CallingState see: https://getstream.io/video/docs/react/ui-cookbook/ringing-call/#incoming-call-panel
   const callingState = useCallCallingState();
 
   if (callingState !== CallingState.JOINED) return <Loader />;
@@ -50,13 +49,13 @@ const MeetingRoom = () => {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
+    <section className="relative h-screen w-full overflow-hidden pt-4 text-white bg-gradient-to-b from-gray-800 via-gray-900 to-black">
       <div className="relative flex size-full items-center justify-center">
-        <div className=" flex size-full max-w-[1000px] items-center">
+        <div className="flex size-full max-w-[1000px] items-center bg-opacity-90 backdrop-blur-md rounded-lg p-4">
           <CallLayout />
         </div>
         <div
-          className={cn('h-[calc(100vh-86px)] hidden ml-2', {
+          className={cn('h-[calc(100vh-220px)] hidden ml-2 bg-gray-800 rounded-lg p-4 shadow-lg', {
             'show-block': showParticipants,
           })}
         >
@@ -64,33 +63,34 @@ const MeetingRoom = () => {
         </div>
       </div>
       {/* video layout and call controls */}
-      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5">
+      <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 bg-gray-900 bg-opacity-80 py-3 px-4 shadow-lg">
         <CallControls onLeave={() => router.push(`/`)} />
-
+  
         <DropdownMenu>
           <div className="flex items-center">
-            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
+            <DropdownMenuTrigger className="cursor-pointer rounded-2xl bg-gradient-to-r from-gray-800 to-gray-700 px-4 py-2 hover:from-gray-700 hover:to-gray-600 transition-all duration-200 shadow-md">
               <LayoutList size={20} className="text-white" />
             </DropdownMenuTrigger>
           </div>
-          <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
+          <DropdownMenuContent className="border-gray-700 bg-gray-800 text-white rounded-lg shadow-lg">
             {['Grid', 'Speaker-Left', 'Speaker-Right'].map((item, index) => (
               <div key={index}>
                 <DropdownMenuItem
                   onClick={() =>
                     setLayout(item.toLowerCase() as CallLayoutType)
                   }
+                  className="hover:bg-gray-700 transition-all duration-200 rounded-lg"
                 >
                   {item}
                 </DropdownMenuItem>
-                <DropdownMenuSeparator className="border-dark-1" />
+                <DropdownMenuSeparator className="border-gray-700" />
               </div>
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
         <CallStatsButton />
         <button onClick={() => setShowParticipants((prev) => !prev)}>
-          <div className=" cursor-pointer rounded-2xl bg-[#19232d] px-4 py-2 hover:bg-[#4c535b]  ">
+          <div className="cursor-pointer rounded-2xl bg-gradient-to-r from-gray-800 to-gray-700 px-4 py-2 hover:from-gray-700 hover:to-gray-600 transition-all duration-200 shadow-md">
             <Users size={20} className="text-white" />
           </div>
         </button>
@@ -98,6 +98,7 @@ const MeetingRoom = () => {
       </div>
     </section>
   );
+  
 };
 
 export default MeetingRoom;
