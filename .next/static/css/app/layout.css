@@ -575,6 +575,12 @@ video {
 .top-\[50\%\] {
   top: 50%;
 }
+.-top-4 {
+  top: -1rem;
+}
+.-top-24 {
+  top: -6rem;
+}
 .z-50 {
   z-index: 50;
 }
@@ -600,6 +606,9 @@ video {
 }
 .ml-1 {
   margin-left: 0.25rem;
+}
+.mt-4 {
+  margin-top: 1rem;
 }
 .flex {
   display: flex;
@@ -746,6 +755,9 @@ video {
 }
 .max-w-lg {
   max-width: 32rem;
+}
+.max-w-\[100px\] {
+  max-width: 100px;
 }
 .flex-1 {
   flex: 1 1 0%;
