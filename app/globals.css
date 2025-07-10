@@ -58,19 +58,19 @@
 }
 
 .card-hover-effect.new-meeting:hover {
-  box-shadow: 0 0 15px 4px rgba(255, 116, 46, 0.3); /* Subtle orange */
+  box-shadow: 0 0 15px 4px rgba(255, 116, 46, 0.3);
 }
 
 .card-hover-effect.join-meeting:hover {
-  box-shadow: 0 0 15px 4px rgba(131, 14, 249, 0.3); /* Subtle purple */
+  box-shadow: 0 0 15px 4px rgba(131, 14, 249, 0.3); 
 }
 
 .card-hover-effect.schedule-meeting:hover {
-  box-shadow: 0 0 15px 4px rgba(100, 236, 255, 0.3); /* Subtle blue */
+  box-shadow: 0 0 15px 4px rgba(100, 236, 255, 0.3); 
 }
 
 .card-hover-effect.view-recordings:hover {
-  box-shadow: 0 0 15px 4px rgba(249, 169, 14, 0.3); /* Subtle golden */
+  box-shadow: 0 0 15px 4px rgba(249, 169, 14, 0.3); 
 }
 
 

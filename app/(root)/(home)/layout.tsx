@@ -1,28 +1,36 @@
-import { Metadata } from 'next';
-import { ReactNode } from 'react';
+'use client';
 
+import { ReactNode, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
 
-export const metadata: Metadata = {
-  title: 'NexDuo',
-  description: 'A workspace for your team, powered by Stream Chat and Clerk.',
-};
+const SIDEBAR_WIDTH = 264;
+const NAVBAR_HEIGHT = 48;
 
-const RootLayout = ({ children }: Readonly<{children: ReactNode}>) => {
+export default function RootLayout({ children }: { children: ReactNode }) {
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+
   return (
-    <main className="relative">
+    <main className="min-h-screen bg-gradient-to-br from-[#101012] to-[#130122]">
       <Navbar />
 
-      <div className="flex">
-        <Sidebar />
-        
-        <section className="flex min-h-screen flex-1 flex-col px-6 pb-6 pt-28 max-md:pb-14 sm:px-14">
-          <div className="w-full">{children}</div>
+      <div className="flex" style={{ paddingTop: NAVBAR_HEIGHT }}>
+        <Sidebar
+          isOpen={sidebarOpen}
+          setIsOpen={setSidebarOpen}
+          width={SIDEBAR_WIDTH}
+        />
+
+        <section
+          className="flex-1 transition-all duration-300 ease-out"
+          style={{
+            marginLeft: sidebarOpen ? SIDEBAR_WIDTH : 0,
+            minHeight: `calc(100vh - ${NAVBAR_HEIGHT}px)`,
+          }}
+        >
+          {children}
         </section>
       </div>
     </main>
   );
-};
-
-export default RootLayout;
+}

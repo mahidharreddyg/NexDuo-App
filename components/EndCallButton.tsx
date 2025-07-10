@@ -1,7 +1,6 @@
 'use client';
 
 import { useCall, useCallStateHooks } from '@stream-io/video-react-sdk';
-
 import { Button } from './ui/button';
 import { useRouter } from 'next/navigation';
 
@@ -30,11 +29,25 @@ const EndCallButton = () => {
   };
 
   return (
-    <Button 
-  onClick={endCall} 
-  className="bg-gradient-to-r from-red-500 to-red-700 hover:from-red-600 hover:to-red-800 text-white px-4 py-2 rounded shadow-lg">
+    <>
+      <Button onClick={endCall} className="endcall-btn">
       End call for everyone
     </Button>
+      <style jsx>{`
+        .endcall-btn {
+          background: linear-gradient(90deg, #ef4444 0%, #b91c1c 100%) !important;
+          color: #fff !important;
+          padding: 0.5rem 1.5rem !important;
+          border-radius: 8px !important;
+          font-weight: 600;
+          box-shadow: 0 2px 8px rgba(239, 68, 68, 0.15);
+          transition: background 0.2s;
+        }
+        .endcall-btn:hover {
+          background: linear-gradient(90deg, #dc2626 0%, #991b1b 100%) !important;
+        }
+      `}</style>
+    </>
   );
 };
 

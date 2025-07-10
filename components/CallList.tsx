@@ -1,7 +1,6 @@
 'use client';
 
 import { Call, CallRecording } from '@stream-io/video-react-sdk';
-
 import Loader from './Loader';
 import { useGetCalls } from '@/hooks/useGetCalls';
 import MeetingCard from './MeetingCard';
@@ -64,7 +63,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
   const noCallsMessage = getNoCallsMessage();
 
   return (
-    <div className="grid grid-cols-1 gap-5 xl:grid-cols-2">
+    <div className="calllist-grid">
       {calls && calls.length > 0 ? (
         calls.map((meeting: Call | CallRecording) => (
           <MeetingCard
@@ -101,8 +100,25 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
           />
         ))
       ) : (
-        <h1 className="text-2xl font-bold text-white">{noCallsMessage}</h1>
+        <h1 className="calllist-empty">{noCallsMessage}</h1>
       )}
+      <style jsx>{`
+        .calllist-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1.25rem;
+        }
+        @media (min-width: 1280px) {
+          .calllist-grid {
+            grid-template-columns: 1fr 1fr;
+          }
+        }
+        .calllist-empty {
+          font-size: 2rem;
+          font-weight: bold;
+          color: #fff;
+        }
+      `}</style>
     </div>
   );
 };

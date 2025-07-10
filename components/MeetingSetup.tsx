@@ -58,11 +58,11 @@ const MeetingSetup = ({
     );
 
   return (
-    <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white">
-      <h1 className="text-center text-2xl font-bold">Setup</h1>
+    <div className="meetingsetup-container">
+      <h1 className="meetingsetup-title">Setup</h1>
       <VideoPreview />
-      <div className="flex h-16 items-center justify-center gap-3">
-        <label className="flex items-center justify-center gap-2 font-medium">
+      <div className="meetingsetup-controls">
+        <label className="meetingsetup-checkbox-label">
           <input
             type="checkbox"
             checked={isMicCamToggled}
@@ -73,15 +73,63 @@ const MeetingSetup = ({
         <DeviceSettings />
       </div>
       <Button
-        className="rounded-md bg-gradient-to-r from-green-500 to-green-800 px-4 py-2.5"
+        className="meetingsetup-btn"
         onClick={() => {
           call.join();
-
           setIsSetupComplete(true);
         }}
       >
         Join meeting
       </Button>
+      <style jsx>{`
+        .meetingsetup-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          height: 100vh;
+          width: 100%;
+          color: #fff;
+        }
+        .meetingsetup-title {
+          text-align: center;
+          font-size: 2rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+        .meetingsetup-controls {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          height: 4rem;
+        }
+        .meetingsetup-checkbox-label {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 500;
+        }
+        .meetingsetup-btn {
+          background: linear-gradient(90deg, #22c55e 0%, #166534 100%) !important;
+          color: #fff !important;
+          border-radius: 8px !important;
+          padding: 0.75rem 1.5rem !important;
+          font-weight: 600;
+          font-size: 1rem;
+          margin-top: 1rem;
+        }
+        @media (max-width: 600px) {
+          .meetingsetup-title {
+            font-size: 1.25rem;
+          }
+          .meetingsetup-btn {
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem !important;
+          }
+        }
+      `}</style>
     </div>
   );
 };
