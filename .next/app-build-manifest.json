@@ -1,16 +1,5 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
-    "/(auth)/sign-in/[[...sigin-in]]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(auth)/sign-in/[[...sigin-in]]/page.js"
-    ],
     "/(root)/(home)/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -26,10 +15,16 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(root)/layout.js"
     ],
-    "/(root)/(home)/personal-room/page": [
+    "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(root)/(home)/personal-room/page.js"
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/(root)/(home)/upcoming/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/(root)/(home)/upcoming/page.js"
     ],
     "/(root)/(home)/previous/page": [
       "static/chunks/webpack.js",
@@ -41,15 +36,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/(root)/(home)/recordings/page.js"
     ],
-    "/(root)/(home)/upcoming/page": [
+    "/(root)/(home)/personal-room/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/(root)/(home)/upcoming/page.js"
-    ],
-    "/(root)/meeting/[id]/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(root)/meeting/[id]/page.js"
+      "static/chunks/app/(root)/(home)/personal-room/page.js"
     ]
   }
 }
